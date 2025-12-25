@@ -1,21 +1,12 @@
-import Image from 'next/image';
 import Section from '../Section';
 import { sectionIds } from '../sections';
-
-import coverPhoto from '@/public/me.jpg';
+import AnimatedImage from './AnimatedImage';
 
 function AboutMe() {
   return (
     <Section id={sectionIds.aboutMe}>
       <div className="size-full flex flex-col items-center justify-center">
-        <div className="size-[min(80dvw,500px)] rounded-2xl neon-box overflow-hidden relative">
-          <Image
-            className="size-full transition-[scale] duration-500 scale-110 hover:scale-100"
-            src={coverPhoto}
-            alt="cover-photo"
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
+        <AnimatedImage />
         <div className="mt-10">
           <h1 className="text-lg @sm:text-2xl @md:text-4xl @2xl:text-6xl">My name is Valdis</h1>
           <div className="mt-4 w-[min(90dvw,700px)] text-sm @md:text-base @lg:text-lg @2xl:text-xl flex flex-col gap-4">

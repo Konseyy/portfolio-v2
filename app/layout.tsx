@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Roboto_Slab } from 'next/font/google';
-import './globals.css';
+import './css/globals.css';
 
 const robotoSlab = Roboto_Slab({
   variable: '--font-roboto-slab',
