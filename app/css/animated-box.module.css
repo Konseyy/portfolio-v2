@@ -34,7 +34,6 @@
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  /* background-color: red; */
   z-index: 1;
   border-radius: 17px;
   background-image: conic-gradient(
@@ -47,7 +46,7 @@
     var(--animated-box-color) 95%,
     transparent 100%
   );
-  animation: 6s gradient-spin linear infinite;
+  animation: 8s gradient-spin linear infinite;
   transition: --animated-box-color 0.3s ease;
 }
 
