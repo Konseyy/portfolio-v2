@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-roboto-slab: var(--font-roboto-slab);
+}
+
+@theme {
+  --animate-custom-pulse: custom-pulse 1s alternate linear infinite;
+
+  @keyframes custom-pulse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@utility neon {
+  text-shadow: 0.022em 0.022em #ff1f8f, -0.007em -0.007em 7px #ff1f8f;
+}
+
+@utility neon-box {
+  box-shadow: .022em .022em #ff1f8f,-.007em -.007em 7px #ff1f8f;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
