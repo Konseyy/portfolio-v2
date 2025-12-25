@@ -11,16 +11,17 @@ const largeText = 'Hello, ';
 function Welcome() {
   return (
     <Section id={sectionIds.welcome}>
-      <div className="relative flex size-full items-center justify-center">
+      <div className="relative flex flex-1 items-center justify-center">
         <span
           className={clsx(
-            'text-8xl @md:text-[8rem] @lg:text-[10rem] @2xl:text-[16rem]'
+            'text-8xl @md:text-[8rem] @lg:text-[10rem] @xl:text-[12rem] @2xl:text-[16rem]',
+            'pr-[min(5rem,5dvw)] @sm:pr-40 @md:pr-60 @xl:pr-100 @2xl:pr-120'
           )}
         >
-          <BlinkingText className="@lg:hidden" textClassName="neon">
+          <BlinkingText className="@md:hidden" textClassName="neon">
             {smallText}
           </BlinkingText>
-          <BlinkingText className="hidden @lg:flex" textClassName="neon">
+          <BlinkingText className="hidden @md:flex" textClassName="neon">
             {largeText}
           </BlinkingText>
         </span>

@@ -5,7 +5,7 @@ import AnimatedImage from './AnimatedImage';
 function AboutMe() {
   return (
     <Section id={sectionIds.aboutMe}>
-      <div className="flex size-full flex-col items-center justify-center">
+      <div className="flex h-dvh flex-1 flex-col items-center justify-center">
         <AnimatedImage />
         <div className="mt-10">
           <h1 className="text-lg @sm:text-2xl @md:text-4xl @2xl:text-6xl">

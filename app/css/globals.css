@@ -7,6 +7,12 @@
 @theme {
   --animate-custom-pulse: custom-pulse 1s alternate linear infinite;
   --animate-up-and-down: up-and-down 3s ease-in-out infinite;
+
+  --container-sm: 40rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-2xl: 96rem;
 }
 
 @keyframes custom-pulse {

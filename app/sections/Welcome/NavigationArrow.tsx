@@ -41,7 +41,7 @@ function NavigationArrow() {
     >
       <svg viewBox="0 0 100 90" width="40" height="36">
         <path
-          className="cursor-pointer"
+          className="cursor-pointer fill-white transition-[fill] duration-500 hover:fill-[#ff5cae] active:fill-[#ff1f8f] active:duration-0"
           onClick={() => {
             const aboutMeSection = document.getElementById(sectionIds.aboutMe);
             if (aboutMeSection) {
@@ -49,7 +49,6 @@ function NavigationArrow() {
             }
           }}
           d="M10 7 Q3 12 8 20 L45 82 Q50 90 55 82 L92 20 Q97 12 90 7 L10 7 Z"
-          fill="white"
         />
       </svg>
     </div>

@@ -21,6 +21,8 @@ function AnimatedImage() {
   };
 
   useEffect(() => {
+    if (visible) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,7 +35,7 @@ function AnimatedImage() {
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
-  }, []);
+  }, [visible]);
 
   return (
     <div
