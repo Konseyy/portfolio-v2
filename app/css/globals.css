@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+@layer utilities {
+  .text-h1 {
+    @apply text-8xl @md:text-[8rem] @lg:text-[10rem] @xl:text-[12rem] @2xl:text-[16rem];
+  }
+  .text-h2 {
+    @apply text-8xl @md:text-[8rem] @lg:text-[10rem] @xl:text-[12rem] @2xl:text-[16rem];
+  }
+  .text-h3 {
+    @apply text-lg @sm:text-2xl @md:text-4xl @2xl:text-6xl;
+  }
+  .text-paragraph {
+    @apply text-sm @md:text-base @lg:text-lg @2xl:text-xl;
+  }
+}
+
 @theme inline {
   --font-roboto-slab: var(--font-roboto-slab);
 }

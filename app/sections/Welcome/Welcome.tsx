@@ -14,14 +14,17 @@ function Welcome() {
       <div className="relative flex flex-1 items-center justify-center">
         <span
           className={clsx(
-            'text-8xl @md:text-[8rem] @lg:text-[10rem] @xl:text-[12rem] @2xl:text-[16rem]',
             'pr-[min(5rem,5dvw)] @sm:pr-40 @md:pr-60 @xl:pr-100 @2xl:pr-120'
           )}
         >
-          <BlinkingText className="@md:hidden" textClassName="neon">
+          <BlinkingText className="@md:hidden" textClassName="neon" as="h1">
             {smallText}
           </BlinkingText>
-          <BlinkingText className="hidden @md:flex" textClassName="neon">
+          <BlinkingText
+            className="hidden @md:flex"
+            textClassName="neon"
+            as="h1"
+          >
             {largeText}
           </BlinkingText>
         </span>

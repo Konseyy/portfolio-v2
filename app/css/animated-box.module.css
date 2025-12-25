@@ -51,7 +51,7 @@
     transparent 100%
   );
   animation: 8s gradient-spin linear infinite;
-  transition: --animated-box-color 0.3s ease;
+  transition: --animated-box-color 2s ease;
 }
 
 .animated-box-shadow::before {

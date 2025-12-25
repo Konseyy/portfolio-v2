@@ -3,7 +3,37 @@
 import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 
+import H1 from '../../components/H1';
+import H2 from '../../components/H2';
+import H3 from '../../components/H3';
+import P from '../../components/P';
+
 type TextAnimationState = 'delayStart' | 'typing' | 'delayEnd' | 'deleting';
+
+type AsComponentType = 'h1' | 'h2' | 'h3' | 'p' | undefined;
+
+function AsComponent({
+  as,
+  className,
+  children,
+}: {
+  as: AsComponentType;
+  className?: string;
+  children: string | string[];
+}) {
+  switch (as) {
+    case 'h1':
+      return <H1 className={className}>{children}</H1>;
+    case 'h2':
+      return <H2 className={className}>{children}</H2>;
+    case 'h3':
+      return <H3 className={className}>{children}</H3>;
+    case 'p':
+      return <P className={className}>{children}</P>;
+    default:
+      return <span className={className}>{children}</span>;
+  }
+}
 
 function BlinkingText({
   children,
@@ -18,6 +48,7 @@ function BlinkingText({
   className,
   textClassName,
   cursorClassName,
+  as,
 }: {
   children: string;
   pauseWhenNotVisible?: boolean;
@@ -31,6 +62,7 @@ function BlinkingText({
   className?: string;
   textClassName?: string;
   cursorClassName?: string;
+  as?: AsComponentType;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -146,17 +178,21 @@ function BlinkingText({
   return (
     <div
       ref={containerRef}
-      className={clsx('relative flex items-center', className)}
+      className={clsx('relative flex items-center whitespace-pre', className)}
     >
-      <span className={clsx('whitespace-pre', textClassName)}>
+      <AsComponent as={as} className={textClassName}>
         {displayedText}
-      </span>
+      </AsComponent>
       <div
         style={{ animationDuration: `${blinkIntervalMs}ms` }}
         className={clsx(
           'h-[1.05em] w-[0.02em] bg-white',
           {
             'animate-custom-pulse': shouldCursorBlink,
+            'text-h1': as === 'h1',
+            'text-h2': as === 'h2',
+            'text-h3': as === 'h3',
+            'text-p': as === 'p',
           },
           cursorClassName
         )}

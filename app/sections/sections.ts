@@ -1,7 +1,7 @@
 export const sectionIds = {
   welcome: 'welcome',
   aboutMe: 'about-me',
-  skills: 'skills',
+  experience: 'experience',
   projects: 'projects',
   contact: 'contact',
 } as const;
