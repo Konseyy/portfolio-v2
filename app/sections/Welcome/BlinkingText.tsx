@@ -30,8 +30,11 @@ function BlinkingText({
   textClassName?: string;
   cursorClassName?: string;
 }) {
-  const [displayedText, setDisplayedText] = useState(startExpanded ? children : '');
-  const [textAnimationState, setTextAnimationState] = useState<TextAnimationState>(startExpanded ? 'delayEnd' : 'delayStart');
+  const [displayedText, setDisplayedText] = useState(
+    startExpanded ? children : ''
+  );
+  const [textAnimationState, setTextAnimationState] =
+    useState<TextAnimationState>(startExpanded ? 'delayEnd' : 'delayStart');
   const [shouldCursorBlink, setShouldCursorBlink] = useState(true);
 
   useEffect(() => {
@@ -71,7 +74,8 @@ function BlinkingText({
   }, [textAnimationState, endDelayMs]);
 
   useEffect(() => {
-    if (textAnimationState !== 'typing' && textAnimationState !== 'deleting') return;
+    if (textAnimationState !== 'typing' && textAnimationState !== 'deleting')
+      return;
 
     const interval = setInterval(
       () => {
@@ -95,17 +99,26 @@ function BlinkingText({
           }
         });
       },
-      textAnimationState === 'typing' ? typingCharIntervalMs : deletingCharIntervalMs
+      textAnimationState === 'typing'
+        ? typingCharIntervalMs
+        : deletingCharIntervalMs
     );
 
     return () => {
       clearInterval(interval);
     };
-  }, [textAnimationState, typingCharIntervalMs, deletingCharIntervalMs, children]);
+  }, [
+    textAnimationState,
+    typingCharIntervalMs,
+    deletingCharIntervalMs,
+    children,
+  ]);
 
   return (
-    <div className={clsx('flex items-center relative', className)}>
-      <span className={clsx('whitespace-pre', textClassName)}>{displayedText}</span>
+    <div className={clsx('relative flex items-center', className)}>
+      <span className={clsx('whitespace-pre', textClassName)}>
+        {displayedText}
+      </span>
       <div
         style={{ animationDuration: `${blinkIntervalMs}ms` }}
         className={clsx(

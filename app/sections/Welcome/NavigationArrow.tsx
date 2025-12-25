@@ -5,8 +5,11 @@ import { sectionIds } from '../sections';
 function NavigationArrow() {
   return (
     <div
-      className="absolute bottom-10 animate-up-and-down scale-60 @lg:scale-75 @2xl:scale-100"
-      style={{ filter: 'drop-shadow(0.022em 0.022em #ff1f8f) drop-shadow(-0.007em -0.007em 7px #ff1f8f)' }}
+      className="animate-up-and-down absolute bottom-10 scale-60 @lg:scale-75 @2xl:scale-100"
+      style={{
+        filter:
+          'drop-shadow(0.022em 0.022em #ff1f8f) drop-shadow(-0.007em -0.007em 7px #ff1f8f)',
+      }}
     >
       <svg viewBox="0 0 100 90" width="40" height="36">
         <path

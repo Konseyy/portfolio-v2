@@ -2,10 +2,15 @@ import { useEffect } from 'react';
 
 export default function useSectionSnapping(
   sectionIds: string[],
-  { scrollDebounceMs = 100, thresholdPx = 100 }: { scrollDebounceMs?: number; thresholdPx?: number } = {}
+  {
+    scrollDebounceMs = 100,
+    thresholdPx = 100,
+  }: { scrollDebounceMs?: number; thresholdPx?: number } = {}
 ) {
   useEffect(() => {
-    const sectionElements = sectionIds.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => el !== null);
+    const sectionElements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
 
     function scrollToClosestSection() {
       const scrollPosition = window.scrollY;

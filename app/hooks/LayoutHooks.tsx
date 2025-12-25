@@ -1,7 +1,7 @@
 'use client';
 
-import { sectionIds } from '../sections/sections';
 import useSectionSnapping from './useSectionSnapping';
+import { sectionIds } from '../sections/sections';
 
 const sectionIdsArray = Object.values(sectionIds);
 
