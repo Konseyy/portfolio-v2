@@ -13,6 +13,8 @@
 .animated-box-shadow {
   position: relative;
   --animated-box-color: #ffffff;
+  --animated-box-line-width: 4px;
+  --animated-box-border-radius: 12px;
 }
 
 .animated-box-shadow:hover {
@@ -22,20 +24,22 @@
 .animated-box-shadow-child {
   z-index: 2;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--animated-box-border-radius);
 }
 
 .animated-box-shadow::after,
 .animated-box-shadow::before {
   content: '';
   position: absolute;
-  height: calc(100% + 12px);
-  width: calc(100% + 12px);
+  height: calc(100% + var(--animated-box-line-width) * 2);
+  width: calc(100% + var(--animated-box-line-width) * 2);
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   z-index: 1;
-  border-radius: 17px;
+  border-radius: calc(
+    var(--animated-box-border-radius) + var(--animated-box-line-width)
+  );
   background-image: conic-gradient(
     from var(--animated-box-angle),
     transparent 0%,
@@ -51,7 +55,7 @@
 }
 
 .animated-box-shadow::before {
-  filter: blur(20px);
+  filter: blur(calc(var(--animated-box-line-width) * 4));
   opacity: 0.7;
 }
 
