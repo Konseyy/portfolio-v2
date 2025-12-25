@@ -29,7 +29,8 @@ function NavigationArrow() {
   return (
     <div
       className={clsx(
-        'animate-up-and-down absolute bottom-10 scale-60 transition-opacity @lg:scale-75 @2xl:scale-100',
+        'animate-up-and-down absolute bottom-10 transition-opacity duration-500',
+        'scale-100 @lg:scale-110 @2xl:scale-125',
         {
           'pointer-events-none opacity-0': !isVisible,
         }
