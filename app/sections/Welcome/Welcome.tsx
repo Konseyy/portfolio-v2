@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Section from '../Section';
 import BlinkingText from './BlinkingText';
 import { sectionIds } from '../sections';
+import NavigationArrow from './NavigationArrow';
 
 const smallText = 'Hi, ';
 const largeText = 'Hello, ';
@@ -9,7 +10,7 @@ const largeText = 'Hello, ';
 function Welcome() {
   return (
     <Section id={sectionIds.welcome}>
-      <div className="size-full flex items-center justify-center">
+      <div className="size-full flex items-center justify-center relative">
         <span className={clsx('text-8xl @md:text-[8rem] @lg:text-[10rem] @2xl:text-[16rem]')}>
           <BlinkingText className="@lg:hidden" textClassName="neon">
             {smallText}
@@ -18,6 +19,7 @@ function Welcome() {
             {largeText}
           </BlinkingText>
         </span>
+        <NavigationArrow />
       </div>
     </Section>
   );

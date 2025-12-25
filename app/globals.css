@@ -6,14 +6,25 @@
 
 @theme {
   --animate-custom-pulse: custom-pulse 1s alternate linear infinite;
+  --animate-up-and-down: up-and-down 3s ease-in-out infinite;
+}
 
-  @keyframes custom-pulse {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+@keyframes custom-pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes up-and-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30%);
   }
 }
 
@@ -22,7 +33,7 @@
 }
 
 @utility neon-box {
-  box-shadow: .022em .022em #ff1f8f,-.007em -.007em 7px #ff1f8f;
+  box-shadow: 0.022em 0.022em #ff1f8f, -0.007em -0.007em 7px #ff1f8f;
 }
 
 body {

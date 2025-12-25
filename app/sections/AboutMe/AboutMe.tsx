@@ -10,7 +10,7 @@ function AboutMe() {
       <div className="size-full flex flex-col items-center justify-center">
         <div className="size-[min(80dvw,500px)] rounded-2xl neon-box overflow-hidden relative">
           <Image
-            className="size-full transition-[scale] duration-500 scale-125 hover:scale-100"
+            className="size-full transition-[scale] duration-500 scale-110 hover:scale-100"
             src={coverPhoto}
             alt="cover-photo"
             style={{ objectFit: 'cover' }}
