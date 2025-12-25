@@ -21,12 +21,12 @@ function AnimatedImage() {
   };
 
   useEffect(() => {
-    if (visible) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setVisible(entry.isIntersecting);
+          if (!entry.isIntersecting) return;
+
+          setVisible(true);
         });
       },
       { threshold: 0.1 }
