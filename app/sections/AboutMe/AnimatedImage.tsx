@@ -2,13 +2,14 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import animatedBoxStyles from '@/app/css/animated-box.module.css';
 import coverPhoto from '@/public/me.jpg';
 
 function AnimatedImage() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [visible, setVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const setAnimationSpeed = (rate: number) => {
@@ -19,16 +20,32 @@ function AnimatedImage() {
     });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+  }, []);
+
   return (
     <div
       ref={containerRef}
       onMouseEnter={() => setAnimationSpeed(2.5)}
       onMouseLeave={() => setAnimationSpeed(1)}
       className={clsx(
-        'animated-box-shadow size-[min(80dvw,500px)]',
+        'animated-box-shadow size-[min(80dvw,500px)] transition-transform delay-100 duration-500 ease-out',
         animatedBoxStyles['animated-box-shadow'],
         {
           'opacity-0': !imageLoaded,
+          'scale-50': !visible,
         }
       )}
     >

@@ -1,12 +1,13 @@
 'use client';
 
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type TextAnimationState = 'delayStart' | 'typing' | 'delayEnd' | 'deleting';
 
 function BlinkingText({
   children,
+  pauseWhenNotVisible = true,
   startExpanded = false,
   typingCharIntervalMs = 300,
   deletingCharIntervalMs = 80,
@@ -19,6 +20,7 @@ function BlinkingText({
   cursorClassName,
 }: {
   children: string;
+  pauseWhenNotVisible?: boolean;
   startExpanded?: boolean;
   typingCharIntervalMs?: number;
   deletingCharIntervalMs?: number;
@@ -30,12 +32,35 @@ function BlinkingText({
   textClassName?: string;
   cursorClassName?: string;
 }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const [displayedText, setDisplayedText] = useState(
     startExpanded ? children : ''
   );
   const [textAnimationState, setTextAnimationState] =
     useState<TextAnimationState>(startExpanded ? 'delayEnd' : 'delayStart');
   const [shouldCursorBlink, setShouldCursorBlink] = useState(true);
+  const [paused, setPaused] = useState(pauseWhenNotVisible ? true : false);
+
+  useEffect(() => {
+    if (!pauseWhenNotVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setPaused(!entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [pauseWhenNotVisible]);
 
   useEffect(() => {
     setShouldCursorBlink(false);
@@ -50,7 +75,7 @@ function BlinkingText({
   }, [displayedText, blinkDelayMs]);
 
   useEffect(() => {
-    if (textAnimationState !== 'delayStart') return;
+    if (textAnimationState !== 'delayStart' || paused) return;
 
     const timeout = setTimeout(() => {
       setTextAnimationState('typing');
@@ -59,10 +84,10 @@ function BlinkingText({
     return () => {
       clearTimeout(timeout);
     };
-  }, [textAnimationState, startDelayMs]);
+  }, [textAnimationState, startDelayMs, paused]);
 
   useEffect(() => {
-    if (textAnimationState !== 'delayEnd') return;
+    if (textAnimationState !== 'delayEnd' || paused) return;
 
     const timeout = setTimeout(() => {
       setTextAnimationState('deleting');
@@ -71,10 +96,13 @@ function BlinkingText({
     return () => {
       clearTimeout(timeout);
     };
-  }, [textAnimationState, endDelayMs]);
+  }, [textAnimationState, endDelayMs, paused]);
 
   useEffect(() => {
-    if (textAnimationState !== 'typing' && textAnimationState !== 'deleting')
+    if (
+      (textAnimationState !== 'typing' && textAnimationState !== 'deleting') ||
+      paused
+    )
       return;
 
     const interval = setInterval(
@@ -112,10 +140,14 @@ function BlinkingText({
     typingCharIntervalMs,
     deletingCharIntervalMs,
     children,
+    paused,
   ]);
 
   return (
-    <div className={clsx('relative flex items-center', className)}>
+    <div
+      ref={containerRef}
+      className={clsx('relative flex items-center', className)}
+    >
       <span className={clsx('whitespace-pre', textClassName)}>
         {displayedText}
       </span>
