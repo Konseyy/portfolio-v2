@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Roboto_Slab } from 'next/font/google';
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         className={`${robotoSlab.variable} font-roboto-slab @container min-h-dvh w-dvw antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
