@@ -1,3 +1,9 @@
+.vertical-timeline {
+  --icon-size-small: 3rem;
+  --icon-size-large: 4.2rem;
+  --icon-size: var(--icon-size-large);
+}
+
 .vertical-timeline::before {
   border-radius: 12px;
 }
@@ -14,11 +20,28 @@
 }
 
 @media screen and (max-width: 1170px) {
+  .vertical-timeline {
+    --icon-size: var(--icon-size-small);
+  }
   .vertical-timeline-element-content {
     padding: 0.7em 1em !important;
+    margin-left: calc(var(--icon-size) * 1.5);
+  }
+  .vertical-timeline::before {
+    left: calc(var(--icon-size) / 2);
   }
 }
 
 .vertical-timeline-element-content:hover {
   box-shadow: 0 0 4px 2px #ff1f8f;
+}
+
+.vertical-timeline-element-icon {
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+}
+@media screen and (min-width: 1170px) {
+  .vertical-timeline-element-icon {
+    margin-left: calc(-1 * var(--icon-size) / 2) !important;
+  }
 }
