@@ -152,7 +152,7 @@ function ExperienceTimeline() {
                       }}
                       initial={collapsed[index] ? 'collapsed' : 'expanded'}
                       animate={collapsed[index] ? 'collapsed' : 'expanded'}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.25 }}
                     >
                       {exp.description.map((desc, i) => (
                         <span
