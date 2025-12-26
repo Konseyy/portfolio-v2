@@ -12,6 +12,8 @@ import styles from '@/app/css/neon-box-shadow.module.css';
 
 import './timeline-style.css';
 
+const LOCALE = 'en-150' as const;
+
 function ExperienceTimeline() {
   return (
     <div className="w-[min(1400px,90dvw)]">
@@ -38,17 +40,17 @@ function ExperienceTimeline() {
             .filter(Boolean)
             .join(' ');
 
-          const displayedDuration = `${exp.date.toLocaleDateString(undefined, {
+          const displayedDuration = `${exp.date.toLocaleDateString(LOCALE, {
             year: 'numeric',
             month: 'short',
           })} - ${
-            exp.endDate?.toLocaleDateString(undefined, {
+            exp.endDate?.toLocaleDateString(LOCALE, {
               year: 'numeric',
               month: 'short',
             }) ?? 'Present'
           } (${displayedTenure})`;
 
-          const displayedDate = exp.date.toLocaleDateString(undefined, {
+          const displayedDate = exp.date.toLocaleDateString(LOCALE, {
             year: 'numeric',
             month: 'short',
           });
