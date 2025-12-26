@@ -11,7 +11,7 @@ const largeText = 'Hello, ';
 function Welcome() {
   return (
     <Section id={sectionIds.welcome}>
-      <div className="relative flex flex-1 items-center justify-center">
+      <div className="relative flex h-lvh flex-1 items-center justify-center">
         <span
           className={clsx(
             'pr-[min(5rem,5vw)] @sm:pr-40 @md:pr-60 @xl:pr-100 @2xl:pr-120'
