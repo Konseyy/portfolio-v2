@@ -1,6 +1,7 @@
 .neon-box-shadow {
   transition:
     box-shadow 600ms ease,
+    outline-color 600ms ease,
     border-color 600ms ease;
   box-shadow:
     0.022em 0.022em white,

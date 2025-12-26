@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -70,7 +71,12 @@ function ExperienceTimeline() {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    className={`size-full cursor-pointer overflow-hidden rounded-full border-2 border-white transition-opacity hover:border-[#ff1f8f] ${styles['neon-box-shadow']}`}
+                    className={clsx(
+                      styles['neon-box-shadow'],
+                      `size-full cursor-pointer overflow-hidden rounded-full transition-opacity`,
+                      'outline-2 -outline-offset-2 outline-white hover:outline-[#ff1f8f]',
+                      'border-2 border-white hover:border-[#ff1f8f]'
+                    )}
                     src={exp.image}
                     alt={`${exp.subTitle} logo`}
                   />
