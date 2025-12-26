@@ -2,7 +2,8 @@
   transition:
     box-shadow 600ms ease,
     outline-color 600ms ease,
-    border-color 600ms ease;
+    border-color 600ms ease,
+    background-color 600ms ease;
   box-shadow: 0 0 5px 2px white;
 }
 .neon-box-shadow:hover {
