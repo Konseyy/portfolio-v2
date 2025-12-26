@@ -5,8 +5,17 @@
 }
 
 .vertical-timeline::before {
+  --gradient-height-start: 30px;
+  --gradient-height-end: 80px;
+
   border-radius: 12px;
-  background-color: #888888 !important;
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    transparent 0,
+    #888888 var(--gradient-height-start),
+    #888888 calc(100% - var(--gradient-height-end)),
+    transparent
+  ) !important;
 }
 
 .vertical-timeline-element-content {
