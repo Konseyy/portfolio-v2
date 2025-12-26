@@ -18,7 +18,7 @@ const LOCALE = 'en-150' as const;
 function ExperienceTimeline() {
   return (
     <div className="w-[min(1400px,90dvw)]">
-      <VerticalTimeline lineColor="white">
+      <VerticalTimeline lineColor="#888888">
         {experiences.map((exp, index) => {
           const endDate = exp.endDate ?? new Date();
           const monthsWorked =
