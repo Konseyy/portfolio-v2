@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -20,7 +20,9 @@ import './timeline-style.css';
 const LOCALE = 'en-150' as const;
 
 function ExperienceTimeline() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(experiences.map(() => false));
+
+  const someCollapsed = useMemo(() => collapsed.some((c) => c), [collapsed]);
 
   return (
     <div className="flex flex-col">
@@ -34,9 +36,9 @@ function ExperienceTimeline() {
             'absolute top-2 right-2 size-6 cursor-pointer rounded-sm p-1 text-white',
             '@min-[1170px]:relative @min-[1170px]:top-[unset] @min-[1170px]:right-[unset] @min-[1170px]:ml-2'
           )}
-          onClick={() => setCollapsed((o) => !o)}
+          onClick={() => setCollapsed((o) => o.map(() => !someCollapsed))}
         >
-          {collapsed ? (
+          {someCollapsed ? (
             <ExpandIcon className="size-full fill-white" />
           ) : (
             <CollapseIcon className="size-full fill-white" />
@@ -84,6 +86,12 @@ function ExperienceTimeline() {
 
             return (
               <VerticalTimelineElement
+                className={exp.description?.length ? 'has-description' : ''}
+                onTimelineElementClick={() =>
+                  setCollapsed((o) =>
+                    o.map((val, i) => (i === index ? !val : val))
+                  )
+                }
                 date={
                   exp.entryType === 'duration'
                     ? displayedDuration
@@ -94,7 +102,6 @@ function ExperienceTimeline() {
                 icon={
                   <Link
                     href={exp.imageUrl}
-                    target="_blank"
                     rel="noopener noreferrer"
                     className="size-full overflow-hidden rounded-full"
                   >
@@ -126,7 +133,7 @@ function ExperienceTimeline() {
                   {exp.description?.length && (
                     <motion.div
                       className={clsx('flex flex-col gap-2 overflow-hidden', {
-                        'mb-2': !collapsed,
+                        'mb-2': !collapsed[index],
                       })}
                       variants={{
                         collapsed: {
@@ -140,8 +147,8 @@ function ExperienceTimeline() {
                           marginBottom: 2,
                         },
                       }}
-                      initial={collapsed ? 'collapsed' : 'expanded'}
-                      animate={collapsed ? 'collapsed' : 'expanded'}
+                      initial={collapsed[index] ? 'collapsed' : 'expanded'}
+                      animate={collapsed[index] ? 'collapsed' : 'expanded'}
                       transition={{ duration: 0.3 }}
                     >
                       {exp.description.map((desc, i) => (
@@ -155,12 +162,11 @@ function ExperienceTimeline() {
                     </motion.div>
                   )}
                   {exp.technologies?.length && (
-                    <div className="mt-2 flex gap-1.5">
+                    <div className="mt-2 flex gap-3">
                       {exp.technologies.map((tech, techIdx) => (
                         <Link
                           key={techIdx}
                           href={tech.url}
-                          target="_blank"
                           rel="noopener noreferrer"
                           className={clsx(
                             'group relative size-8 rounded-full transition-all duration-300'
@@ -168,7 +174,7 @@ function ExperienceTimeline() {
                         >
                           <div className="rounded-full bg-black transition-all duration-300 group-hover:scale-120 group-hover:bg-white">
                             <Image
-                              className="white-filter group-hover:black-filter p-1 transition-all duration-300 group-hover:p-2"
+                              className="white-filter group-hover:black-filter p-[3px] transition-transform duration-300 group-hover:scale-70"
                               src={tech.icon}
                               alt={tech.name}
                             />
@@ -178,7 +184,7 @@ function ExperienceTimeline() {
                               'rounded-lg bg-[rgba(255,255,255,0.1)] whitespace-nowrap text-white backdrop-blur-xs',
                               'px-2 py-1',
                               'absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2',
-                              'transition-all duration-200',
+                              'transition-all duration-100',
                               'origin-top scale-0 group-hover:scale-100'
                             )}
                           >

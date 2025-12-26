@@ -36,6 +36,10 @@
     background-color 300ms ease;
 }
 
+.has-description .vertical-timeline-element-content {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1170px) {
   .vertical-timeline {
     --icon-size: var(--icon-size-small);
