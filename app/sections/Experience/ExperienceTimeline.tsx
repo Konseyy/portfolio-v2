@@ -97,7 +97,7 @@ function ExperienceTimeline() {
                 <span className="text-2xl font-medium">{exp.title}</span>
                 <div className="flex flex-col gap-2">
                   {exp.description?.map((desc, i) => (
-                    <span key={i} className="indent-2">
+                    <span key={i} className="indent-2 text-sm @md:text-base">
                       {desc}
                     </span>
                   ))}
