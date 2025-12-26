@@ -14,7 +14,7 @@ function Welcome() {
       <div className="relative flex flex-1 items-center justify-center">
         <span
           className={clsx(
-            'pr-[min(5rem,5dvw)] @sm:pr-40 @md:pr-60 @xl:pr-100 @2xl:pr-120'
+            'pr-[min(5rem,5vw)] @sm:pr-40 @md:pr-60 @xl:pr-100 @2xl:pr-120'
           )}
         >
           <BlinkingText className="@md:hidden" textClassName="neon" as="h1">

@@ -25,7 +25,7 @@ function AnimatedImage() {
       onMouseEnter={() => setAnimationSpeed(2.5)}
       onMouseLeave={() => setAnimationSpeed(1)}
       className={clsx(
-        'animated-box-shadow size-[min(80dvw,500px)] transition-transform delay-100 duration-500 ease-out',
+        'animated-box-shadow size-[min(80vw,500px)] transition-transform delay-100 duration-500 ease-out',
         animatedBoxStyles['animated-box-shadow'],
         {
           'opacity-0': !imageLoaded,

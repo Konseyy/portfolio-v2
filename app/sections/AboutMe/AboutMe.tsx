@@ -7,11 +7,11 @@ import AnimatedImage from './AnimatedImage';
 function AboutMe() {
   return (
     <Section id={sectionIds.aboutMe}>
-      <div className="flex h-dvh flex-1 flex-col items-center justify-center">
+      <div className="flex h-screen flex-1 flex-col items-center justify-center">
         <AnimatedImage />
         <div className="mt-10">
           <H3>My name is Valdis</H3>
-          <div className="mt-4 flex w-[min(90dvw,700px)] flex-col gap-4">
+          <div className="mt-4 flex w-[min(90vw,700px)] flex-col gap-4">
             <P>
               {`I'm currently studying for my Bachelor's degree in Computer Science at the University of Latvia and also working as a Software
               Developer. Most of my experience comes from working as a frontend developer and using technologies like React.js and Electron

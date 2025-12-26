@@ -4,7 +4,7 @@ import { SectionId } from './sections';
 
 function Section({ children, id }: { children: ReactNode; id: SectionId }) {
   return (
-    <section id={id} className="flex min-h-dvh w-full flex-col p-4">
+    <section id={id} className="flex min-h-screen w-full flex-col p-4">
       {children}
     </section>
   );
