@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoSlab.variable} font-roboto-slab @container min-h-dvh w-dvw antialiased`}
+        className={`${robotoSlab.variable} font-roboto-slab @container min-h-dvh w-dvw overflow-x-hidden antialiased`}
       >
         {children}
         <Analytics />
