@@ -28,7 +28,7 @@
     margin-left: calc(var(--icon-size) * 1.5) !important;
   }
   .vertical-timeline::before {
-    left: calc(var(--icon-size) / 2);
+    /* left: calc(var(--icon-size) / 2); */
   }
 }
 
