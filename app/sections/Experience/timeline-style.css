@@ -6,6 +6,7 @@
 
 .vertical-timeline::before {
   border-radius: 12px;
+  background-color: #888888 !important;
 }
 
 .vertical-timeline-element-content {
