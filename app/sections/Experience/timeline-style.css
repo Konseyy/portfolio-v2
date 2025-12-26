@@ -12,14 +12,16 @@
 .vertical-timeline::before {
   --gradient-height-start: 30px;
   --gradient-height-end: 80px;
+  --gradient-start-offset: 5px;
+  --gradient-end-offset: 70px;
 
   border-radius: 12px;
   background-color: transparent !important;
   background-image: linear-gradient(
-    transparent 0,
-    #888888 var(--gradient-height-start),
-    #888888 calc(100% - var(--gradient-height-end)),
-    transparent
+    transparent var(--gradient-start-offset),
+    #888888 calc(var(--gradient-height-start) + var(--gradient-start-offset)),
+    #888888 calc(100% - var(--gradient-height-end) - var(--gradient-end-offset)),
+    transparent calc(100% - var(--gradient-end-offset))
   ) !important;
 }
 
