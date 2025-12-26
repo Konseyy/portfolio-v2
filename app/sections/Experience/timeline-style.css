@@ -4,6 +4,11 @@
   --icon-size: var(--icon-size-large);
 }
 
+.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: rgb(178, 178, 178) !important;
+}
+
 .vertical-timeline::before {
   --gradient-height-start: 30px;
   --gradient-height-end: 80px;

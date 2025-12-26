@@ -1,8 +1,9 @@
 import type { StaticImageData } from 'next/image';
 
-import dhanvantariLogo from '@/public/dhanvantari.jpg';
-import giraffe360Logo from '@/public/giraffe.png';
-import universityLogo from '@/public/lu.png';
+import { technologies, type Technology } from '../../misc/technologies';
+import dhanvantariLogo from '@/public/companies/dhanvantari.jpg';
+import giraffe360Logo from '@/public/companies/giraffe.png';
+import universityLogo from '@/public/companies/lu.png';
 
 type ExperienceEntry = {
   subTitle: string;
@@ -14,6 +15,7 @@ type ExperienceEntry = {
   date: Date;
   endDate?: Date;
   description?: string[];
+  technologies?: Technology[];
 };
 
 export const experiences: ExperienceEntry[] = (
@@ -46,6 +48,7 @@ export const experiences: ExperienceEntry[] = (
         "My first professional experience as a developer, I got recommended this internship through the university's mentorship program, since my mentor at the time was working there.",
         'The internship had me working on a laravel project, where I also got to learn some React.js basics, which, even though it was still using the class component system, which sparked my initial intereset in frontend development.',
       ],
+      technologies: [technologies.laravel],
     },
     {
       subTitle: 'Dhanvantari Solutions',
@@ -61,6 +64,11 @@ export const experiences: ExperienceEntry[] = (
         'During this time, I got to work on many different projects, but most were backend focused and were heavily reliant on aging technologies like jQuery and Drupal, which definitely did not match my interests at the time, so I started looking into other opportunities.',
         'I did, however, get to dip my toes into React Native development during the end of my time here, which further solidified my interest in frontend development. (Especially since the codebase was using modern react instead of the class component system)',
       ],
+      technologies: [
+        technologies.laravel,
+        technologies.drupal,
+        technologies.reactNative,
+      ],
     },
     {
       subTitle: 'Giraffe360',
@@ -72,6 +80,11 @@ export const experiences: ExperienceEntry[] = (
       date: new Date('2022-06-06'),
       endDate: new Date('2024-06-01'),
       description: ['lorem ipsum dolor sit amet consectetur adipiscing elit'],
+      technologies: [
+        technologies.nextJs,
+        technologies.electron,
+        technologies.webgl,
+      ],
     },
     {
       subTitle: 'University of Latvia',
@@ -82,6 +95,7 @@ export const experiences: ExperienceEntry[] = (
       extraInfo: 'Finished studies',
       entryType: 'event',
       date: new Date('2024-05-31'),
+      technologies: [technologies.rust],
     },
     {
       subTitle: 'Giraffe360',
@@ -92,6 +106,7 @@ export const experiences: ExperienceEntry[] = (
       extraInfo: 'Full time',
       date: new Date('2024-06-01'),
       description: ['lorem ipsum dolor sit amet consectetur adipiscing elit'],
+      technologies: [technologies.nextJs, technologies.threeJs],
     },
   ] satisfies ExperienceEntry[]
 ).sort((a, b) => a.date.getTime() - b.date.getTime());

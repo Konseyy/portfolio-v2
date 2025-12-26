@@ -32,7 +32,7 @@ function ExperienceTimeline() {
           className={clsx(
             styles['neon-box-shadow'],
             'absolute top-2 right-2 size-6 cursor-pointer rounded-sm p-1 text-white',
-            '@min-[1170px]:top-[unset] @min-[1170px]:right-[unset] @min-[1170px]:relative @min-[1170px]:ml-2'
+            '@min-[1170px]:relative @min-[1170px]:top-[unset] @min-[1170px]:right-[unset] @min-[1170px]:ml-2'
           )}
           onClick={() => setCollapsed((o) => !o)}
         >
@@ -89,7 +89,6 @@ function ExperienceTimeline() {
                     ? displayedDuration
                     : displayedDate
                 }
-                className="group"
                 dateClassName="pointer-events-none px-2!"
                 key={index}
                 icon={
@@ -124,24 +123,28 @@ function ExperienceTimeline() {
                     )}
                   </span>
                   <span className="text-2xl font-medium">{exp.title}</span>
-                  {
+                  {exp.description?.length && (
                     <motion.div
-                      className="flex flex-col gap-2 overflow-hidden"
+                      className={clsx('flex flex-col gap-2 overflow-hidden', {
+                        'mb-2': !collapsed,
+                      })}
                       variants={{
                         collapsed: {
                           height: 0,
                           opacity: 0,
+                          marginBottom: 0,
                         },
                         expanded: {
                           height: 'auto',
                           opacity: 1,
+                          marginBottom: 2,
                         },
                       }}
                       initial={collapsed ? 'collapsed' : 'expanded'}
                       animate={collapsed ? 'collapsed' : 'expanded'}
                       transition={{ duration: 0.3 }}
                     >
-                      {exp.description?.map((desc, i) => (
+                      {exp.description.map((desc, i) => (
                         <span
                           key={i}
                           className="indent-2 text-sm @md:text-base"
@@ -150,7 +153,41 @@ function ExperienceTimeline() {
                         </span>
                       ))}
                     </motion.div>
-                  }
+                  )}
+                  {exp.technologies?.length && (
+                    <div className="mt-2 flex gap-1.5">
+                      {exp.technologies.map((tech, techIdx) => (
+                        <Link
+                          key={techIdx}
+                          href={tech.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={clsx(
+                            'group relative size-8 rounded-full transition-all duration-300'
+                          )}
+                        >
+                          <div className="rounded-full bg-black transition-all duration-300 group-hover:scale-120 group-hover:bg-white">
+                            <Image
+                              className="white-filter group-hover:black-filter p-1 transition-all duration-300 group-hover:p-2"
+                              src={tech.icon}
+                              alt={tech.name}
+                            />
+                          </div>
+                          <span
+                            className={clsx(
+                              'rounded-lg bg-[rgba(255,255,255,0.1)] whitespace-nowrap text-white backdrop-blur-xs',
+                              'px-2 py-1',
+                              'absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2',
+                              'transition-all duration-200',
+                              'origin-top scale-0 group-hover:scale-100'
+                            )}
+                          >
+                            {tech.name}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </VerticalTimelineElement>
             );
