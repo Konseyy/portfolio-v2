@@ -27,6 +27,11 @@ export const experiences: ExperienceEntry[] = (
       extraInfo: 'Started studies',
       entryType: 'event',
       date: new Date('2020-09-01'),
+      description: [
+        "I had a slight interest in programming as early as middle school, and during high school got to actually try it out for the first time through my school's programming class, where I learned some very basic Java.",
+        "This lead me to pursue computer science at university, and after some research I decided to apply to the University of Latvia's computer science bachelor program, as it seemed to be the most modern program out of the ones I could find in Latvia at the time.",
+        'The university got me my first opportunity to work as a professional developer through their mentorship program and web technologies course, where I learned laravel - getting the necessary experience to secure an internship.',
+      ],
     },
     {
       subTitle: 'Dhanvantari Solutions',
@@ -38,8 +43,8 @@ export const experiences: ExperienceEntry[] = (
       date: new Date('2021-07-01'),
       endDate: new Date('2021-08-31'),
       description: [
-        'My first professional experience as a developer, I got the opportunity to work at this digital agency through my university mentorship program.',
-        'The internship had me working on a laravel project, where I also got to learn some React.js basics, even though it was still using the class component system, which sparked my initial intereset in frontend development.',
+        "My first professional experience as a developer, I got recommended this internship through the university's mentorship program, since my mentor at the time was working there.",
+        'The internship had me working on a laravel project, where I also got to learn some React.js basics, which, even though it was still using the class component system, which sparked my initial intereset in frontend development.',
       ],
     },
     {
