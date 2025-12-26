@@ -31,8 +31,8 @@ function ExperienceTimeline() {
         <button
           className={clsx(
             styles['neon-box-shadow'],
-            'absolute top-2 right-2 size-6 w-fit cursor-pointer rounded-sm p-1 text-white',
-            '@min-[1170px]:relative @min-[1170px]:top-0 @min-[1170px]:right-0 @min-[1170px]:ml-2'
+            'absolute top-2 right-2 size-6 cursor-pointer rounded-sm p-1 text-white',
+            '@min-[1170px]:top-[unset] @min-[1170px]:right-[unset] @min-[1170px]:relative @min-[1170px]:ml-2'
           )}
           onClick={() => setCollapsed((o) => !o)}
         >
