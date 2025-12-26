@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -123,8 +124,23 @@ function ExperienceTimeline() {
                     )}
                   </span>
                   <span className="text-2xl font-medium">{exp.title}</span>
-                  {!collapsed && (
-                    <div className="flex flex-col gap-2">
+                  {
+                    <motion.div
+                      className="flex flex-col gap-2 overflow-hidden"
+                      variants={{
+                        collapsed: {
+                          height: 0,
+                          opacity: 0,
+                        },
+                        expanded: {
+                          height: 'auto',
+                          opacity: 1,
+                        },
+                      }}
+                      initial={collapsed ? 'collapsed' : 'expanded'}
+                      animate={collapsed ? 'collapsed' : 'expanded'}
+                      transition={{ duration: 0.3 }}
+                    >
                       {exp.description?.map((desc, i) => (
                         <span
                           key={i}
@@ -133,8 +149,8 @@ function ExperienceTimeline() {
                           {desc}
                         </span>
                       ))}
-                    </div>
-                  )}
+                    </motion.div>
+                  }
                 </div>
               </VerticalTimelineElement>
             );
