@@ -3,12 +3,8 @@
     box-shadow 600ms ease,
     outline-color 600ms ease,
     border-color 600ms ease;
-  box-shadow:
-    0.022em 0.022em white,
-    -0.007em -0.007em 7px white;
+  box-shadow: 0 0 5px 2px white;
 }
 .neon-box-shadow:hover {
-  box-shadow:
-    0.022em 0.022em #ff1f8f,
-    -0.007em -0.007em 10px #ff1f8f;
+  box-shadow: 0 0 3px 2px #ff1f8f;
 }

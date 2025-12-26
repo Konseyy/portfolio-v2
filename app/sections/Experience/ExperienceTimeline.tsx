@@ -69,11 +69,12 @@ function ExperienceTimeline() {
                   href={exp.imageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="size-full overflow-hidden rounded-full"
                 >
                   <Image
                     className={clsx(
                       styles['neon-box-shadow'],
-                      `size-full cursor-pointer overflow-hidden rounded-full transition-opacity`,
+                      `size-full cursor-pointer rounded-full transition-opacity`,
                       'outline-2 -outline-offset-2 outline-white hover:outline-[#ff1f8f]',
                       'border-2 border-white hover:border-[#ff1f8f]'
                     )}
