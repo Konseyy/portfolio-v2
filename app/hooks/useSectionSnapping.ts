@@ -84,7 +84,7 @@ export default function useSectionSnapping(sectionIds: string[]) {
           const id = entry.target.id;
           if (!entry.isIntersecting || !id) continue;
 
-          history.replaceState(null, '', `#${id}`);
+          // history.replaceState(null, '', `#${id}`);
         }
       },
       {
