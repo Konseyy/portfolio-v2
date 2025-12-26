@@ -55,12 +55,6 @@
     -0.007em -0.007em 7px #ff1f8f;
 }
 
-@utility neon-box {
-  box-shadow:
-    0.022em 0.022em #ff1f8f,
-    -0.007em -0.007em 7px #ff1f8f;
-}
-
 body {
   background-color: black;
   color: white;

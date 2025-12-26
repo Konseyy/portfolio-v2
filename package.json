@@ -15,7 +15,8 @@
     "lodash": "^4.17.21",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-vertical-timeline-component": "^3.5.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -23,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "@typescript-eslint/parser": "^8.50.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
