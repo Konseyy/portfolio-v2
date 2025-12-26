@@ -11,6 +11,7 @@
     box-shadow 600ms ease,
     outline-color 600ms ease,
     border-color 600ms ease,
+    opacity 200ms ease,
     background-color 600ms ease;
   box-shadow: 0 0 var(--radius) var(--spread) white;
 }

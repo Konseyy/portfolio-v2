@@ -120,7 +120,7 @@ function ExperienceTimeline() {
                     />
                   </Link>
                 }
-                iconClassName="shadow-none!"
+                iconClassName="shadow-none! transition-[filter] active:filter-[brightness(0.75)] duration-200"
                 contentArrowStyle={{ display: 'none' }}
               >
                 <div className="flex flex-col">

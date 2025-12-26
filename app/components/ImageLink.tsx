@@ -19,7 +19,7 @@ function ImageLink({
       href={url}
       rel="noopener noreferrer"
       className={clsx(
-        'group relative rounded-full transition-all duration-300',
+        'group relative rounded-full transition-all duration-300 active:opacity-75',
         className
       )}
     >
