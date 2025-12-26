@@ -1,8 +1,11 @@
 import H3 from '../../components/H3';
+import ImageLink from '../../components/ImageLink';
 import P from '../../components/P';
 import Section from '../Section';
 import { sectionIds } from '../sections';
 import AnimatedImage from './AnimatedImage';
+import githubLogo from '@/public/companies/github.svg';
+import linkedinLogo from '@/public/companies/linkedin.svg';
 
 function AboutMe() {
   return (
@@ -21,6 +24,20 @@ function AboutMe() {
               {`Constantly striving to learn new concepts as well as better my knowledge with already familiar technologies. In my free time
               you can find me in the gym, playing simracing or other video games, playing music or just hanging out with friends.`}
             </P>
+            <div className="mt-4 flex w-full gap-4">
+              <ImageLink
+                img={githubLogo}
+                tooltip="Github"
+                url="https://github.com/Konseyy"
+                className="size-12"
+              />
+              <ImageLink
+                img={linkedinLogo}
+                tooltip="LinkedIn"
+                url="https://www.linkedin.com/in/valdis-g-bukalders-a0b9a2168/"
+                className="size-12"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ import {
 import { experiences } from './data';
 import CollapseIcon from '../../components/icons/CollapseIcon';
 import ExpandIcon from '../../components/icons/ExpandIcon';
+import ImageLink from '../../components/ImageLink';
 import styles from '@/app/css/neon-box-shadow.module.css';
 
 import './timeline-style.css';
@@ -33,6 +34,7 @@ function ExperienceTimeline() {
         <button
           className={clsx(
             styles['neon-box-shadow'],
+            'active:opacity-75',
             'absolute top-2 right-2 size-6 cursor-pointer rounded-sm p-1 text-white',
             '@min-[1170px]:relative @min-[1170px]:top-[unset] @min-[1170px]:right-[unset] @min-[1170px]:ml-2'
           )}
@@ -163,35 +165,16 @@ function ExperienceTimeline() {
                     </motion.div>
                   )}
                   {exp.technologies?.length && (
-                    <div className="mt-2 flex gap-3">
+                    <div className="mt-2 flex items-center">
+                      <span className="mr-2 opacity-60">Tech stack: </span>
                       {exp.technologies.map((tech, techIdx) => (
-                        <Link
+                        <ImageLink
                           key={techIdx}
-                          href={tech.url}
-                          rel="noopener noreferrer"
-                          className={clsx(
-                            'group relative size-8 rounded-full transition-all duration-300'
-                          )}
-                        >
-                          <div className="rounded-full bg-black transition-all duration-300 group-hover:scale-120 group-hover:bg-white">
-                            <Image
-                              className="white-filter group-hover:black-filter p-[3px] transition-transform duration-300 group-hover:scale-70"
-                              src={tech.icon}
-                              alt={tech.name}
-                            />
-                          </div>
-                          <span
-                            className={clsx(
-                              'rounded-lg bg-[rgba(255,255,255,0.1)] whitespace-nowrap text-white backdrop-blur-xs',
-                              'px-2 py-1',
-                              'absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2',
-                              'transition-all duration-100',
-                              'origin-top scale-0 group-hover:scale-100'
-                            )}
-                          >
-                            {tech.name}
-                          </span>
-                        </Link>
+                          className="mr-1.5 size-8"
+                          img={tech.icon}
+                          tooltip={tech.name}
+                          url={tech.url}
+                        />
                       ))}
                     </div>
                   )}

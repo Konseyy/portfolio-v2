@@ -14,6 +14,8 @@
     background-color 600ms ease;
   box-shadow: 0 0 var(--radius) var(--spread) white;
 }
+
 .neon-box-shadow:hover {
   box-shadow: 0 0 var(--radius) var(--spread) #ff1f8f;
+  animation: none;
 }
