@@ -108,6 +108,7 @@ function ExperienceTimeline() {
                     <Image
                       className={clsx(
                         styles['neon-box-shadow'],
+                        styles.small,
                         `size-full cursor-pointer rounded-full transition-opacity`,
                         'outline-2 -outline-offset-2 outline-white hover:outline-[#ff1f8f]',
                         'border-2 border-white hover:border-[#ff1f8f]'

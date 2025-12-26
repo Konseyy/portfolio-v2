@@ -1,11 +1,19 @@
+.neon-box-shadow.small {
+  --radius: 2px;
+  --spread: 1px;
+}
+
 .neon-box-shadow {
+  --radius: 4px;
+  --spread: 2px;
+
   transition:
     box-shadow 600ms ease,
     outline-color 600ms ease,
     border-color 600ms ease,
     background-color 600ms ease;
-  box-shadow: 0 0 5px 2px white;
+  box-shadow: 0 0 var(--radius) var(--spread) white;
 }
 .neon-box-shadow:hover {
-  box-shadow: 0 0 3px 2px #ff1f8f;
+  box-shadow: 0 0 var(--radius) var(--spread) #ff1f8f;
 }
