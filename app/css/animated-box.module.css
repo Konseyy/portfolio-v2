@@ -29,6 +29,7 @@
 
 .animated-box-shadow::after,
 .animated-box-shadow::before {
+  overflow: hidden;
   content: '';
   position: absolute;
   height: calc(100% + var(--animated-box-line-width) * 2);
@@ -57,6 +58,12 @@
 .animated-box-shadow::before {
   filter: blur(calc(var(--animated-box-line-width) * 4));
   opacity: 0.7;
+}
+
+@media screen and (max-width: 500px) {
+  .animated-box-shadow::before {
+    display: none;
+  }
 }
 
 @keyframes gradient-spin {
