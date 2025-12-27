@@ -52,7 +52,7 @@ function Projects() {
                     >
                       <Image
                         className={clsx(
-                          'aspect-video w-full object-cover object-center transition-transform duration-500 group-hover/img:scale-105'
+                          'aspect-video w-full object-cover object-center transition-transform duration-500 group-hover/img:scale-125'
                         )}
                         src={project.image}
                         alt={project.title}
