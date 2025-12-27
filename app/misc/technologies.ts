@@ -4,6 +4,7 @@ import drupalLogo from '@/public/technologies/drupal.svg';
 import electronLogo from '@/public/technologies/electron.svg';
 import laravelLogo from '@/public/technologies/laravel.svg';
 import nextJsLogo from '@/public/technologies/nextjs.svg';
+import openGlLogo from '@/public/technologies/opengl.svg';
 import reactLogo from '@/public/technologies/react-native.svg';
 import reactNativeLogo from '@/public/technologies/react.svg';
 import rustLogo from '@/public/technologies/rust.svg';
@@ -73,6 +74,11 @@ export const technologies = {
     name: 'Tailwind CSS',
     icon: tailwindLogo,
     url: 'https://tailwindcss.com/',
+  },
+  openGl: {
+    name: 'OpenGL',
+    icon: openGlLogo,
+    url: 'https://www.opengl.org/',
   },
 } as const satisfies {
   [technology: string]: Technology;

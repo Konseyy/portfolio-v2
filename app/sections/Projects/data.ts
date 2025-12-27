@@ -3,6 +3,7 @@ import type { StaticImageData } from 'next/image';
 import { technologies, type Technology } from '../../misc/technologies';
 import mandelbrotScreenshot from '@/public/projects/mandelbrot.png';
 import portfolioScreenshot from '@/public/projects/portfolio_v2.png';
+import surfaceEstimationScreenshot from '@/public/projects/surface_estimations.png';
 
 interface Project {
   title: string;
@@ -44,5 +45,16 @@ export const projects: Project[] = [
     techStack: [technologies.typeScript, technologies.threeJs],
     sourceUrl: 'https://github.com/Konseyy/mandelbrot-gpu',
     liveUrl: 'https://mandelbrot.valdis.me/',
+  },
+  {
+    title: 'Surface Normal Estimation from Depth Maps',
+    year: 2024,
+    description: [
+      'My bachelor thesis project, focused on reconstructing 3D meshes from depth maps using marching cubes and elastic surface nets algorithms.',
+      'Written in Rust for performance and easy parallelism, utilizing OpenGL for rendering and shadow mapping.',
+    ],
+    image: surfaceEstimationScreenshot,
+    techStack: [technologies.rust, technologies.openGl],
+    sourceUrl: 'https://github.com/Konseyy/surface-mesh-estimation',
   },
 ] as const;

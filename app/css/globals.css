@@ -19,6 +19,9 @@
   .neon-link {
     @apply text-white underline decoration-transparent hover:text-[#ff1f8f] hover:decoration-white;
   }
+  .neon-inline-link {
+    @apply text-white underline decoration-white hover:text-[#ff1f8f];
+  }
 }
 
 @theme inline {

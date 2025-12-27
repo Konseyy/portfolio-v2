@@ -1,4 +1,6 @@
 import type { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 import { technologies, type Technology } from '../../misc/technologies';
 import dhanvantariLogo from '@/public/companies/dhanvantari.jpg';
@@ -14,7 +16,7 @@ type ExperienceEntry = {
   entryType: 'duration' | 'event';
   date: Date;
   endDate?: Date;
-  description?: string[];
+  description?: (string | ReactNode)[];
   technologies?: Technology[];
 };
 
@@ -95,7 +97,36 @@ export const experiences: ExperienceEntry[] = (
       extraInfo: 'Finished studies',
       entryType: 'event',
       date: new Date('2024-05-31'),
-      technologies: [technologies.rust],
+      description: [
+        'For my bachelor thesis and course project (small project before bachelor thesis) I decided to further explore something I was working on at Giraffe360 at the time - surface normal estimations from depth maps, and real time lighting.',
+        <span key={'thesis project'}>
+          The{' '}
+          <Link
+            className="neon-inline-link underline-offset-2 transition-all duration-300"
+            href="https://dspace.lu.lv/handle/7/66090"
+          >
+            thesis
+          </Link>{' '}
+          itself was a project about how to reconstruct meshes from depth maps
+          using two different approaches - marching cubes and elastic surface
+          nets. After meshes have been constructed it also renders real time
+          lighting using the widely used shadow mapping technique.
+        </span>,
+        <span key={'thesis details'}>
+          The{' '}
+          <Link
+            className="neon-inline-link underline-offset-2 transition-all duration-300"
+            href="https://github.com/Konseyy/surface-mesh-estimation"
+          >
+            project
+          </Link>{' '}
+          is written in rust, since I&apos;m always interested in trying out
+          different languages, and uses opengl for rendering. It was a nice
+          opportunity for me to explore rust since the project benefitted from
+          the performance gains as mesh reconstruction is CPU-heavy.
+        </span>,
+      ],
+      technologies: [technologies.rust, technologies.openGl],
     },
     {
       subTitle: 'Giraffe360',
