@@ -13,6 +13,12 @@
   .text-paragraph {
     @apply text-sm @md:text-base @lg:text-lg @2xl:text-xl;
   }
+  .neon-button {
+    @apply shadow-[0_0_10px_transparent] hover:bg-[#ff1f8f] hover:shadow-[0_0_20px_#ff1f8f];
+  }
+  .neon-link {
+    @apply text-white underline decoration-transparent hover:text-[#ff1f8f] hover:decoration-white;
+  }
 }
 
 @theme inline {

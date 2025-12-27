@@ -125,9 +125,14 @@ function ExperienceTimeline() {
               >
                 <div className="flex flex-col">
                   <span className="mb-1">
-                    <span className="text-lg">{exp.subTitle} </span>
+                    <Link
+                      href={exp.imageUrl}
+                      className="neon-link text-lg underline-offset-4 transition-all duration-300"
+                    >
+                      {exp.subTitle}
+                    </Link>
                     {exp.extraInfo && (
-                      <span className="text-xs font-medium italic opacity-60">
+                      <span className="ml-1.5 text-xs font-medium italic opacity-60">
                         {exp.extraInfo}
                       </span>
                     )}

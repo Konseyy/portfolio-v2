@@ -17,11 +17,23 @@
   --animated-box-border-radius: 12px;
 }
 
+.animated-box-shadow.hover-only {
+  --animated-box-color: transparent;
+}
+.animated-box-shadow.small-line {
+  --animated-box-border-radius: 15px;
+  --animated-box-line-width: 2px;
+}
+
 .animated-box-shadow:hover {
   --animated-box-color: #ff1f8f;
 }
+.animated-box-shadow.white:hover {
+  --animated-box-color: #ffffff;
+}
 
 .animated-box-shadow-child {
+  position: relative;
   z-index: 2;
   overflow: hidden;
   border-radius: var(--animated-box-border-radius);

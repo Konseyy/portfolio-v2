@@ -65,8 +65,8 @@ export const experiences: ExperienceEntry[] = (
         'I did, however, get to dip my toes into React Native development during the end of my time here, which further solidified my interest in frontend development. (Especially since the codebase was using modern react instead of the class component system)',
       ],
       technologies: [
-        technologies.laravel,
         technologies.drupal,
+        technologies.react,
         technologies.reactNative,
       ],
     },

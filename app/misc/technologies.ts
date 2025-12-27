@@ -4,9 +4,12 @@ import drupalLogo from '@/public/technologies/drupal.svg';
 import electronLogo from '@/public/technologies/electron.svg';
 import laravelLogo from '@/public/technologies/laravel.svg';
 import nextJsLogo from '@/public/technologies/nextjs.svg';
-import reactLogo from '@/public/technologies/react.svg';
+import reactLogo from '@/public/technologies/react-native.svg';
+import reactNativeLogo from '@/public/technologies/react.svg';
 import rustLogo from '@/public/technologies/rust.svg';
+import tailwindLogo from '@/public/technologies/tailwind.svg';
 import threeJsLogo from '@/public/technologies/threejs.svg';
+import typeScriptLogo from '@/public/technologies/typescript.svg';
 import webglLogo from '@/public/technologies/webgl.svg';
 
 export type Technology = {
@@ -31,9 +34,19 @@ export const technologies = {
     icon: electronLogo,
     url: 'https://www.electronjs.org/',
   },
+  typeScript: {
+    name: 'TypeScript',
+    icon: typeScriptLogo,
+    url: 'https://www.typescriptlang.org/',
+  },
+  react: {
+    name: 'React',
+    icon: reactLogo,
+    url: 'https://reactjs.org/',
+  },
   reactNative: {
     name: 'React Native',
-    icon: reactLogo,
+    icon: reactNativeLogo,
     url: 'https://reactnative.dev/',
   },
   nextJs: {
@@ -55,6 +68,11 @@ export const technologies = {
     name: 'WebGL',
     icon: webglLogo,
     url: 'https://www.khronos.org/webgl/',
+  },
+  tailwind: {
+    name: 'Tailwind CSS',
+    icon: tailwindLogo,
+    url: 'https://tailwindcss.com/',
   },
 } as const satisfies {
   [technology: string]: Technology;

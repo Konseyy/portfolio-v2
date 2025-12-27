@@ -35,8 +35,8 @@ function ImageLink({
           'rounded-lg bg-[rgba(255,255,255,0.1)] whitespace-nowrap text-white backdrop-blur-xs hover:hidden',
           'px-2 py-1',
           'absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2',
-          'transition-all duration-100',
-          'origin-top scale-0 group-hover:scale-100'
+          'transition-all duration-300',
+          'origin-top scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100'
         )}
       >
         {tooltip}
