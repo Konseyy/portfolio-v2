@@ -159,7 +159,7 @@ function Projects() {
                 </div>
               </div>
               {idx < projects.length - 1 && (
-                <div className="mt-16 h-0.5 w-full bg-linear-to-r from-transparent via-[#333333] to-transparent" />
+                <div className="mt-16 h-0.5 w-full bg-[linear-gradient(90deg,transparent,#222222_40%,#222222_60%,transparent)]" />
               )}
             </div>
           ))}
