@@ -19,9 +19,8 @@ export const projects: Project[] = [
     title: 'Portfolio Website',
     year: 2025,
     description: [
-      'My personal portfolio website, built using Next.js and Tailwind CSS.',
-      'Features a dark neon theme with smooth animations and responsive design.',
-      'Showcases my projects, experience, and skills in an interactive manner.',
+      'My personal portfolio website (this website), built using Next.js and tailwind.',
+      'Features a dark neon and responsive design, showcases my projects, experience, and skills in an interactive manner.',
     ],
     image: portfolioScreenshot,
     techStack: [
