@@ -44,6 +44,6 @@ export const data: (string | ReactNode)[] = [
     </Link>
     .
   </span>,
-  "I finished my Bachelor's degree in Computer Science in 2024 at the University of Latvia, which taught me alot about the various fields of programming and got me interested in things like computer graphics and broadening my knowledge of other programming languages. The Web Technologies course from my first semester of university is the main driving force that got me interested in frontend development in the first place.",
-  'Constantly learning new things and trying to broaden my skillset - currently diving deeper into 3D graphics on the web. In my free time, though, you can also find me in the gym, playing games or music, attempting to fix my own car, or just hanging out with friends.',
+  "I finished my Bachelor's degree in Computer Science in 2024 at the University of Latvia, which taught me a lot about the various fields of programming and got me interested in computer graphics and learning other programming languages. The Web Technologies course from my first semester of university is the main driving force that got me interested in frontend development in the first place.",
+  'Constantly learning new things and trying to broaden my skillset, currently diving deeper into 3D graphics on the web. In my free time you can also find me in the gym, playing games or music, attempting to fix my own car, or just hanging out with friends.',
 ];
