@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const DEBOUNCE_MS = 120;
-const THRESHOLD_PX = 120;
+const THRESHOLD_PX = 50;
 
 export default function useSectionSnapping(sectionIds: string[]) {
   useEffect(() => {

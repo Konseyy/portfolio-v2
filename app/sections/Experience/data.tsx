@@ -102,7 +102,7 @@ export const experiences: ExperienceEntry[] = (
         <span key={'thesis project'}>
           The{' '}
           <Link
-            className="neon-inline-link underline-offset-2 transition-all duration-300"
+            className="neon-inline-link transition-all duration-300"
             href="https://dspace.lu.lv/handle/7/66090"
           >
             thesis
@@ -115,7 +115,7 @@ export const experiences: ExperienceEntry[] = (
         <span key={'thesis details'}>
           The{' '}
           <Link
-            className="neon-inline-link underline-offset-2 transition-all duration-300"
+            className="neon-inline-link transition-all duration-300"
             href="https://github.com/Konseyy/surface-mesh-estimation"
           >
             project

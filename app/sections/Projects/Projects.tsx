@@ -33,7 +33,7 @@ function Projects() {
                 >
                   <div
                     className={clsx(
-                      'group/img relative rounded-xl',
+                      'group/img relative w-full rounded-xl',
                       'shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-500 hover:shadow-[0_0_10px_rgba(255,255,255,0.10)]',
                       'hover:scale-102',
                       'opacity-80 hover:opacity-100',
